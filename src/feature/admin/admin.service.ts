@@ -19,8 +19,6 @@ export class AdminService {
       password,
     };
 
-    console.log('user', user);
-
     return {
       expiresIn: 3600,
       accessToken: this.jwtServer.sign(user),

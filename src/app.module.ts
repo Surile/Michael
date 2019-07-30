@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AdminModule } from './feature/admin/admin.module';
+import { UserService } from './feature/user/user.service';
+import { UserModule } from './feature/user/user.module';
 
 @Module({
   imports: [
@@ -17,8 +19,7 @@ import { AdminModule } from './feature/admin/admin.module';
       synchronize: true,
     }),
     AdminModule,
+    UserModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
